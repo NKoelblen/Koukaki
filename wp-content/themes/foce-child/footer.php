@@ -19,7 +19,6 @@
         <li><a href="#">Mentions Légales</a></li>
         <li><a href="#">STUDIO KOUKAKI</a></li>
         <li><a href="#">Contact</a></li>
-        <!-- <img class="flower" src="./wp-content/themes/foce/assets/images/hibiscus_footer.png"> -->
     </ul>
 </footer><!-- #colophon -->
 </div><!-- #page -->

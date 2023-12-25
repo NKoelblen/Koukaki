@@ -1,5 +1,4 @@
-/* --- FLOWERS --- */
-/* Animate flowers */
+/* --- ANIMATE FLOWERS --- */
 @keyframes flower-rotation {
   0% {
     transform: rotate(0deg);
@@ -8,6 +7,10 @@
     transform: rotate(360deg);
   }
 }
+#page {
+  --flower-rotation-duration: 5000ms;
+}
+
 .story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, .flower {
-  animation: flower-rotation 5000ms linear infinite;
+  animation: flower-rotation var(--flower-rotation-duration) linear infinite;
 }/*# sourceMappingURL=sections.css.map */

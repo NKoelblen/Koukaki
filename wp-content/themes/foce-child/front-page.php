@@ -10,13 +10,9 @@ get_header();
     <section id="#story" class="story">
         <h2>
             L'histoire
-            <!-- <img class="leaves left" src="./wp-content/themes/foce/assets/images/sunflower_leaves.png">
-            <img class="flower left" src="./wp-content/themes/foce/assets/images/Sunflower.png"> -->
         </h2>
         <article id="" class="story__article">
             <p><?php echo get_theme_mod('story'); ?></p>
-            <!-- <img class="flower right" src="./wp-content/themes/foce/assets/images/Hibiscus.png">
-            <img class="leaves right" src="./wp-content/themes/foce/assets/images/hibiscus_leaves.png"> -->
         </article>
         <?php
         $args = array(
@@ -67,8 +63,6 @@ get_header();
     <section id="studio">
         <h2>
             Studio Koukaki
-            <!-- <img class="flower left" src="./wp-content/themes/foce/assets/images/random_flower.png">
-            <img class="flower right" src="./wp-content/themes/foce/assets/images/flower.png"> -->
         </h2>
         <div>
             <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
