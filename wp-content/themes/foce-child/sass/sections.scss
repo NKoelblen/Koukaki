@@ -1,0 +1,92 @@
+/* --- FLOWERS --- */
+
+// /* Remove pseudos-class ::before & ::after for leaves and flowers */
+// .story h2::before, .story h2::after, .story__article::after, .story__article::before, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after  {
+//     content: none;
+// }
+
+// /* Set properties for leaves and flowers */
+
+// .leaves, .flower {
+//     position: absolute;
+// }
+// .leaves {
+//     z-index: -1;
+// }
+
+// .story {
+//     h2 {    
+//         .leaves {
+//             left: 0;
+//             top: 1.8em;
+//         }
+//         .flower {
+//             left: 0.7em;
+//             top: 6em;
+//         }
+//     }
+//     &__article {
+//         .leaves {
+//             left: 50%;
+//             top: 8em;
+//         }
+//         .flower {
+//             left: calc(50% + 414px);
+//             top: 2em;
+//         }
+//     }
+// }
+
+// #studio h2 {
+//     .flower {
+//         &.left {
+//             left: -1em;
+//             top: 0;
+//         }
+//         &.right {
+//             right: 1em;
+//             top: 1.2em;
+//         }
+//     }
+// }
+
+// .site-footer {
+//     .flower {
+//         &.left {
+//             left: 4em;
+//             top: 0em;
+//         }
+//         &.right {
+//             right: -4em;
+//             bottom: 7.8em;
+//         }
+//     }
+// }
+
+// @media all and (max-width: 1192px) {
+//     .story {
+//         &__article {
+//             .leaves {
+//                 left: 40%;
+//                 top: 8em;
+//             }
+//             .flower {
+//                 left: calc(40% + 414px);
+//                 top: 2em;
+//             }
+//         }
+//     }
+// }
+
+/* Animate flowers */
+@keyframes flower-rotation{
+    0% {
+        transform: rotate(0deg) ;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, .flower {
+    animation: flower-rotation 5000ms linear infinite;
+}

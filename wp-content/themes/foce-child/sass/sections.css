@@ -1,0 +1,13 @@
+/* --- FLOWERS --- */
+/* Animate flowers */
+@keyframes flower-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, .flower {
+  animation: flower-rotation 5000ms linear infinite;
+}/*# sourceMappingURL=sections.css.map */
