@@ -1,16 +1,49 @@
-/* --- ANIMATE FLOWERS --- */
+/* --- ANIMATE SECIIONS --- */
+@keyframes section-fade {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+@keyframes section-translate {
+    from {
+        transform: translateY(230px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+@keyframes logo-translate {
+    from {
+        transform: translateY(80px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+@keyframes banner-translate {
+    from {
 
+    }
+    to {
+
+    }
+}
+
+/* --- ANIMATE FLOWERS --- */
 @keyframes flower-rotation{
-    0% {
+    from {
         transform: rotate(0deg) ;
     }
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
 #page{
     --flower-rotation-duration: 5000ms;
-  }
+}
 .story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, .flower {
     animation: flower-rotation var(--flower-rotation-duration) linear infinite;
 }
