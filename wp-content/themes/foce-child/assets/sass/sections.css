@@ -1,3 +1,32 @@
+/* --- HEADER --- */
+.banner {
+  position: relative;
+}
+.banner img {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+#background-video, #background-img {
+  width: 100%;
+  height: 806px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 699px) {
+  #background-video {
+    display: none;
+  }
+}
+@media (min-width: 699px) {
+  .banner {
+    background-image: none;
+  }
+}
 /* --- NOMINATION SECTION --- */
 #nomination {
   display: flex;
@@ -47,7 +76,7 @@
   content: url("../images/orchid.png");
   position: absolute;
   top: -178px;
-  right: -300.8px;
+  right: calc(-21.43% - 87.4px);
 }
 
 @media (max-width: 920px) {
@@ -139,9 +168,9 @@ h2, h3 {
   }
 }
 #page {
-  --flower-rotation-duration: 5000ms;
+  --flower-rotation-duration: 15s;
 }
 
 .story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, #nomination::before, #nomination::after {
-  animation: flower-rotation var(--flower-rotation-duration) linear infinite forwards;
+  animation: flower-rotation var(--flower-rotation-duration) linear infinite both;
 }/*# sourceMappingURL=sections.css.map */
