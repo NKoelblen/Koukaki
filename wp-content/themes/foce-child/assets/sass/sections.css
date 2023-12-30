@@ -1,42 +1,65 @@
 /* --- HEADER --- */
 .banner {
   position: relative;
+  background-image: none;
 }
-.banner img {
-  max-width: 720px;
+
+@keyframes logo-float {
+  from {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5%);
+  }
+  50% {
+    transform: translateX(-2.5%);
+  }
+  75% {
+    transform: translate(2.5%, -2.5%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+#logo {
   position: fixed;
+  max-width: 720px;
   top: 155px;
   left: 0;
   right: 0;
   margin: 0 auto;
 }
-.banner img.absolute-position {
+#logo img {
+  width: 100%;
+  animation: logo-float 3s infinite linear;
+}
+#logo.absolute-position {
   position: absolute;
   top: auto;
   bottom: 0;
 }
 
-#background-video {
+#background-video, #background-image {
   width: 100%;
   height: 806px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
+@media (min-width: 699px) {
+  #background-image {
+    display: none;
+  }
+}
 @media (max-width: 699px) {
   #background-video {
     display: none;
   }
-  .banner img {
+  #logo {
     top: 106px;
   }
-  .banner img.absolute-position {
+  #logo.absolute-position {
     top: auto;
-  }
-}
-@media (min-width: 699px) {
-  .banner {
-    background-image: none;
   }
 }
 /* --- NOMINATION --- */
@@ -144,7 +167,14 @@
     transform: translateY(0px);
   }
 }
-@keyframes banner-translate {}
+@keyframes banner-translate {
+  from {
+    transform: translateY(-80px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
 /* --- ANIMATE TITLES --- */
 @keyframes first-word-translate {
   from {

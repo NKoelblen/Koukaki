@@ -1,45 +1,65 @@
 /* --- HEADER --- */
 .banner {
     position: relative;
-
-    img {
-        max-width: 720px;
-        position: fixed;
-        top: 155px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-
-        &.absolute-position {
-            position: absolute;
-            top: auto;
-            bottom: 0;
-        }
+    background-image: none;
+  }
+@keyframes logo-float {
+    from {
+      transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5%);
+    }
+    50% {
+        transform: translateX(-2.5%);
+    }
+    75% {
+        transform: translate(2.5%, -2.5%);
+    }
+    to {
+      transform: translate(0);
     }
 }
-#background-video {
+#logo {
+    position: fixed;
+    max-width: 720px;
+    top: 155px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        animation: logo-float 3s infinite linear;
+    }
+    &.absolute-position {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+    }
+}
+#background-video, #background-image {
     width: 100%;
     height: 806px;
     object-fit: cover;
+}
+@media (min-width: 699px) {
+    #background-image {
+      display: none;
+    }
 }
 @media (max-width: 699px) {
     #background-video {
       display: none;
     }
-    .banner img {
+    #logo {
         top: 106px;
 
         &.absolute-position {
             top: auto;
         }
     }
-  }
-    
-  @media (min-width: 699px) {
-    .banner {
-      background-image: none;
-    }
-  }
+}
 
 /* --- NOMINATION --- */
 #nomination {
@@ -147,10 +167,10 @@
 }
 @keyframes banner-translate {
     from {
-
+        transform: translateY(-80px);
     }
     to {
-
+        transform: translateY(0px);
     }
 }
 

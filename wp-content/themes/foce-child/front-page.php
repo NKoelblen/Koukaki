@@ -6,11 +6,11 @@ get_header();
 <main id="primary" class="site-main">
 
     <section class="banner">
-        <video id="background-video" poster=<?= get_stylesheet_directory_uri() . "/assets/images/banner.png"; ?> autoplay muted loop>
+        <video id="background-video" poster=<?= get_template_directory_uri() . "/assets/images/banner.png"; ?> autoplay muted loop>
             <source src=<?= get_stylesheet_directory_uri() . '\assets\videos\Studio+Koukaki-vidéo+header+sans+son+(1).mp4'; ?> type="video/mp4">
         </video>
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
-        <!-- <img id="background-img" src="<?= get_template_directory_uri() . '/assets/images/banner.png'; ?> " alt="bannière Fleurs d'oranger & chats errants"> -->
+        <img id="background-image" src="<?= get_template_directory_uri() . '/assets/images/banner.png'; ?> " alt="bannière Fleurs d'oranger & chats errants">
+        <div id="logo"><img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"></div>
     </section>
 
     <section id="story" class="story">

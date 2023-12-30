@@ -5,14 +5,17 @@ function apparition(element) {
     let elementRect = element.getBoundingClientRect();
     if(elementRect.top < windowH - 32) {
         element.style.setProperty("animation", "800ms ease-out forwards");
-        if(element.localName === "img") {            
+        if(element.id === "logo") {            
             element.style.setProperty("animation-name", "section-fade, logo-translate");
+        } else if (element.id === "background-video" || element.id === "background-image") {
+            element.style.setProperty("animation-name", "section-fade, banner-translate");
         } else {
             element.style.setProperty("animation-name", "section-fade, section-translate");
         }
     }
 }
-document.querySelectorAll('section:not(.banner), .banner img').forEach(section => {
+document.querySelectorAll('section:not(.banner), #logo, #background-video, #background-image').forEach(section => {
+    console.log(document.querySelectorAll('section:not(.banner), #logo, #background-video, #background-image'));
     apparition(section);
     document.addEventListener("scroll", () => {
         apparition(section);
@@ -46,12 +49,10 @@ document.addEventListener("scrollend", () => {
 });
 
 /* Logo Parallax effect */
-const logo = document.querySelector(".banner img");
+const logo = document.querySelector("#logo");
 const logoRect = logo.getBoundingClientRect();
-console.log(logoRect.bottom);
 document.addEventListener("scroll", () => {
     const bannerRect = document.querySelector(".banner").getBoundingClientRect();
-    console.log(bannerRect.bottom);
     if(bannerRect.bottom <= logoRect.bottom - 80) {
         logo.classList.add("absolute-position");
     } else {
