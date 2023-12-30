@@ -1,27 +1,21 @@
 const windowH = window.innerHeight;
 
 /* Sections apparition on scroll */
-const sections = document.querySelectorAll('section:not(.banner), .banner img');
-sections.forEach(section => {
-    let sectionRect = section.getBoundingClientRect();
-    if(sectionRect.top < windowH) {
-        section.style.setProperty("animation", "800ms ease-out forwards");
-        if(section.localName === "img") {            
-            section.style.setProperty("animation-name", "section-fade, logo-translate");
+function apparition(element) {
+    let elementRect = element.getBoundingClientRect();
+    if(elementRect.top < windowH - 32) {
+        element.style.setProperty("animation", "800ms ease-out forwards");
+        if(element.localName === "img") {            
+            element.style.setProperty("animation-name", "section-fade, logo-translate");
         } else {
-            section.style.setProperty("animation-name", "section-fade, section-translate");
+            element.style.setProperty("animation-name", "section-fade, section-translate");
         }
     }
+}
+document.querySelectorAll('section:not(.banner), .banner img').forEach(section => {
+    apparition(section);
     document.addEventListener("scroll", () => {
-        sectionRect = section.getBoundingClientRect();
-        if(sectionRect.top < windowH - 32) {
-            section.style.setProperty("animation", "800ms ease-out forwards");
-            if(section.localName === "img") {            
-                section.style.setProperty("animation-name", "section-fade, logo-translate");
-            } else {
-                section.style.setProperty("animation-name", "section-fade, section-translate");
-            }
-        }
+        apparition(section);
     })
 });
 
@@ -31,7 +25,6 @@ titles.forEach(title => {
     let originalString = title.innerHTML.trim();
     let splitWords = originalString.split(" ");
     title.innerHTML = "<span class=\"first-word\">"+ splitWords.shift() + "</span> <span class=\"next-words\">" + splitWords.join(' ') + "</span>";
-console.log(title.getBoundingClientRect());
 })
 document.addEventListener("scroll", () => {
     titles.forEach(title => {

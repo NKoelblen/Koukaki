@@ -1,3 +1,75 @@
+/* --- NOMINATION SECTION --- */
+#nomination {
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  margin-top: 141px;
+  position: relative;
+}
+#nomination p {
+  width: 75%;
+  margin: 0;
+  padding: 57px 51px 67px 68px;
+  font-family: Quicksand;
+  font-size: 42px;
+  line-height: 53px;
+  font-weight: bold;
+  letter-spacing: -0.85px;
+  color: #FFF5E9;
+  text-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+  vertical-align: middle;
+  background-image: url(../images/orange_nomination_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+#nomination img {
+  width: 25%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: 50% top;
+     object-position: 50% top;
+  margin: 44px 0 0 -31px;
+}
+#nomination::before {
+  content: url("../images/Sunflower.png");
+  width: 216px;
+  height: 216px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  top: -145px;
+  left: -97px;
+}
+#nomination::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  top: -178px;
+  right: -300.8px;
+}
+
+@media (max-width: 920px) {
+  #nomination p {
+    width: 100%;
+  }
+  #nomination img {
+    width: 278px;
+    height: 129px;
+    margin: 0;
+  }
+}
+#colophon {
+  padding-top: 235px;
+}
+#colophon::before {
+  content: none;
+}
+#colophon::after {
+  content: none;
+}
+
 /* --- ANIMATE SECIIONS --- */
 @keyframes section-fade {
   from {
@@ -70,6 +142,6 @@ h2, h3 {
   --flower-rotation-duration: 5000ms;
 }
 
-.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, .flower {
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, #nomination::before, #nomination::after {
   animation: flower-rotation var(--flower-rotation-duration) linear infinite forwards;
 }/*# sourceMappingURL=sections.css.map */

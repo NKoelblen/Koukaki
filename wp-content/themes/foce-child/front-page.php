@@ -75,6 +75,8 @@ get_header();
         </div>
     </section>
 
+    <?php require __DIR__ . '/template-parts/nomination.php'; ?>
+
 </main><!-- #main -->
 
 <?php
