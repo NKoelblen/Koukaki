@@ -44,3 +44,17 @@ document.addEventListener("scroll", () => {
 document.addEventListener("scrollend", () => {
     maincontent.style.setProperty('--flower-rotation-duration','15s');
 });
+
+/* Logo Parallax effect */
+const logo = document.querySelector(".banner img");
+const logoRect = logo.getBoundingClientRect();
+console.log(logoRect.bottom);
+document.addEventListener("scroll", () => {
+    const bannerRect = document.querySelector(".banner").getBoundingClientRect();
+    console.log(bannerRect.bottom);
+    if(bannerRect.bottom <= logoRect.bottom - 80) {
+        logo.classList.add("absolute-position");
+    } else {
+        logo.classList.remove("absolute-position");
+    }
+})

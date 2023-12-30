@@ -3,14 +3,20 @@
   position: relative;
 }
 .banner img {
-  position: absolute;
-  top: 75px;
+  max-width: 720px;
+  position: fixed;
+  top: 155px;
   left: 0;
   right: 0;
   margin: 0 auto;
 }
+.banner img.absolute-position {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
 
-#background-video, #background-img {
+#background-video {
   width: 100%;
   height: 806px;
   -o-object-fit: cover;
@@ -21,13 +27,19 @@
   #background-video {
     display: none;
   }
+  .banner img {
+    top: 106px;
+  }
+  .banner img.absolute-position {
+    top: auto;
+  }
 }
 @media (min-width: 699px) {
   .banner {
     background-image: none;
   }
 }
-/* --- NOMINATION SECTION --- */
+/* --- NOMINATION --- */
 #nomination {
   display: flex;
   width: 70%;
@@ -87,6 +99,14 @@
     width: 278px;
     height: 129px;
     margin: 0;
+  }
+  #nomination::before {
+    content: none;
+  }
+}
+@media (max-width: 699px) {
+  #nomination::after {
+    content: none;
   }
 }
 #colophon {
