@@ -1,7 +1,7 @@
 const windowH = window.innerHeight;
 
 /* Sections apparition on scroll */
-function apparition(element) {
+function sectionApparition(element) {
     let elementRect = element.getBoundingClientRect();
     if(elementRect.top < windowH - 32) {
         element.style.setProperty("animation", "800ms ease-out forwards");
@@ -15,27 +15,30 @@ function apparition(element) {
     }
 }
 document.querySelectorAll('section:not(.banner), #logo, #background-video, #background-image').forEach(section => {
-    console.log(document.querySelectorAll('section:not(.banner), #logo, #background-video, #background-image'));
-    apparition(section);
+    sectionApparition(section);
     document.addEventListener("scroll", () => {
-        apparition(section);
+        sectionApparition(section);
     })
 });
 
 /* Titles apparition on scroll */
+function titleApparition(element) {
+    let elementRect = element.getBoundingClientRect();
+    if(elementRect.bottom < windowH && elementRect.top > 0) {
+        element.querySelector(".first-word").style.setProperty("animation", "first-word-translate 500ms ease-in forwards");
+        element.querySelector(".next-words").style.setProperty("animation", "next-words-translate 500ms ease-in forwards");
+    }
+}
 const titles = document.querySelectorAll("h2, h3");
 titles.forEach(title => {
     let originalString = title.innerHTML.trim();
     let splitWords = originalString.split(" ");
     title.innerHTML = "<span class=\"first-word\">"+ splitWords.shift() + "</span> <span class=\"next-words\">" + splitWords.join(' ') + "</span>";
 })
-document.addEventListener("scroll", () => {
-    titles.forEach(title => {
-        let titleRect = title.getBoundingClientRect();
-        if(titleRect.bottom < windowH) {
-            title.querySelector(".first-word").style.setProperty("animation", "first-word-translate 500ms ease-in forwards");
-            title.querySelector(".next-words").style.setProperty("animation", "next-words-translate 500ms ease-in forwards");
-        }
+titles.forEach(title => {
+    titleApparition(title);
+    document.addEventListener("scroll", () => {
+        titleApparition(title);
     })
 })
 
@@ -51,11 +54,39 @@ document.addEventListener("scrollend", () => {
 /* Logo Parallax effect */
 const logo = document.querySelector("#logo");
 const logoRect = logo.getBoundingClientRect();
+let bannerRect = document.querySelector(".banner").getBoundingClientRect();
+if(bannerRect.bottom <= 0) {
+    logo.classList.add("absolute-position");
+}
 document.addEventListener("scroll", () => {
-    const bannerRect = document.querySelector(".banner").getBoundingClientRect();
+    bannerRect = document.querySelector(".banner").getBoundingClientRect();
     if(bannerRect.bottom <= logoRect.bottom - 80) {
         logo.classList.add("absolute-position");
     } else {
         logo.classList.remove("absolute-position");
     }
 })
+
+/* SwiperJS Coverflow */
+const swiper = new Swiper(".swiper", {
+    direction: 'horizontal',
+    centeredSlides: true,
+    slidesPerView: "auto",
+    speed: 2000,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+    loop: true,
+    loopedSlides: 2,
+    loopAdditionalSlides: 1,
+    effect: "coverflow",
+    coverflowEffect: {
+        slideShadows: false,
+        rotate: 70,
+        stretch: 0,
+        depth: 50,
+        modifier: 1, 
+    },
+});
+swiper.slideNext();

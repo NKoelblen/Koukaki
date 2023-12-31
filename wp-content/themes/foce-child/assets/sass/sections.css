@@ -62,6 +62,40 @@
     top: auto;
   }
 }
+/* --- CHARACTERS --- */
+.story #characters {
+  display: block;
+}
+.story #characters h3 {
+  margin-left: 121.67px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.swiper {
+  width: 100vw;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
+}
+.swiper .swiper-wrapper {
+  width: 100%;
+}
+.swiper .swiper-wrapper .swiper-slide {
+  min-width: -moz-fit-content !important;
+  min-width: fit-content !important;
+  margin: 38.1px 20px 0;
+}
+.swiper .swiper-wrapper .swiper-slide img {
+  height: 360px;
+}
+.swiper .swiper-wrapper .swiper-slide p {
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.4px;
+  margin: 27px auto 0 auto;
+}
+
 /* --- NOMINATION --- */
 #nomination {
   display: flex;

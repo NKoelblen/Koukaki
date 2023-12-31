@@ -61,6 +61,43 @@
     }
 }
 
+/* --- CHARACTERS --- */
+.story #characters {
+    display: block;
+
+    h3 {
+        margin-left: 121.67px;
+        width: fit-content;
+    }
+}
+.swiper {
+    width: 100vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: auto;
+
+    .swiper-wrapper {
+        width: 100%;
+
+        .swiper-slide {
+            // background-position: center;
+            // background-size: cover;
+            min-width: fit-content !important;
+            margin: 38.1px 20px 0;
+
+            img {
+            // display: block;
+            height: 360px;
+            }
+            p {
+                font-size: 20px;
+                line-height: 25px;
+                letter-spacing:-0.4px;
+                margin: 27px auto 0 auto;
+            }
+        }
+    }        
+}
 /* --- NOMINATION --- */
 #nomination {
     display: flex;
