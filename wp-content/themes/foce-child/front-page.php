@@ -10,7 +10,7 @@ get_header();
             <source src=<?= get_stylesheet_directory_uri() . '\assets\videos\Studio+Koukaki-vidéo+header+sans+son+(1).mp4'; ?> type="video/mp4">
         </video>
         <img id="background-image" src="<?= get_template_directory_uri() . '/assets/images/banner.png'; ?> " alt="bannière Fleurs d'oranger & chats errants">
-        <div id="logo"><img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"></div>
+        <div id="logo"><img src="<?= get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants"></div>
     </section>
 
     <section id="story" class="story">
@@ -20,7 +20,7 @@ get_header();
         </h2>
 
         <article id="" class="story__article">
-            <p><?php echo get_theme_mod('story'); ?></p>
+            <p><?= get_theme_mod('story'); ?></p>
         </article>
 
         <?php
@@ -39,7 +39,11 @@ get_header();
         <article id="place">
             <div>
                 <h3>Le Lieu</h3>
-                <p><?php echo get_theme_mod('place'); ?></p>
+                <p><?= get_theme_mod('place'); ?></p>
+            </div>
+            <div id="clouds">
+                <img id="big-cloud" src="<?= get_stylesheet_directory_uri() . '/assets/images/big_cloud.png'; ?> " alt="gros nuage">
+                <img id="little-cloud" src="<?= get_stylesheet_directory_uri() . '/assets/images/little_cloud.png'; ?> " alt="petit nuage">
             </div>
         </article>
 

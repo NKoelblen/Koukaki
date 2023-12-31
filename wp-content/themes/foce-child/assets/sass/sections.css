@@ -96,6 +96,33 @@
   margin: 27px auto 0 auto;
 }
 
+/* --- PLACE --- */
+.story #place {
+  background-image: url(../images/Studio_Koukaki-image_place.png);
+  position: relative;
+}
+
+#clouds {
+  width: 38.47%;
+  position: absolute;
+  top: 65px;
+  left: 23.13%;
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+  filter: blur(16.5px);
+  margin: 0 !important;
+}
+#clouds #big-cloud {
+  width: 316px;
+  height: 122px;
+  align-self: flex-end;
+}
+#clouds #little-cloud {
+  width: 142px;
+  height: 55px;
+}
+
 /* --- NOMINATION --- */
 #nomination {
   display: flex;

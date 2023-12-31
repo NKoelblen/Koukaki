@@ -23,8 +23,9 @@ document.querySelectorAll('section:not(.banner), #logo, #background-video, #back
 
 /* Titles apparition on scroll */
 function titleApparition(element) {
+    let computedStyle = getComputedStyle(element);
     let elementRect = element.getBoundingClientRect();
-    if(elementRect.bottom < windowH && elementRect.top > 0) {
+    if(elementRect.bottom - parseFloat(computedStyle.paddingBottom) < windowH && elementRect.top - parseFloat(computedStyle.paddingTop) > 0) {
         element.querySelector(".first-word").style.setProperty("animation", "first-word-translate 500ms ease-in forwards");
         element.querySelector(".next-words").style.setProperty("animation", "next-words-translate 500ms ease-in forwards");
     }
@@ -90,3 +91,15 @@ const swiper = new Swiper(".swiper", {
     },
 });
 swiper.slideNext();
+
+/* Translate clouds on scroll */
+const clouds = document.querySelector('#clouds');
+window.addEventListener("scroll", function () {  
+    const cloudsRect = clouds.getBoundingClientRect();
+    const ratio = (windowH - cloudsRect.y) / windowH;
+    const translate = 20.83 * ratio;
+    if(ratio > 0 && ratio < 1) {
+        clouds.style.setProperty('transform', 'translateX(' + translate + 'vw)'); //rect.y: position de l'élément par rapport au haut de la fenêtre
+    }
+});
+
