@@ -1,5 +1,20 @@
 const windowH = window.innerHeight;
 
+/* Burger Menu */
+const menuToggle = document.querySelector("#navbar .menu-toggle");
+const menuUL = document.querySelector('.main-navigation ul');
+menuUL.style.setProperty('display', 'none');
+menuToggle.addEventListener("click", () => {
+    if (menuToggle.getAttribute( 'aria-expanded') === 'true' ) {
+        menuToggle.style.backgroundImage = 'url(/koukaki/wp-content/themes/foce-child/assets/images/Burger_croix.png)';
+        menuUL.style.setProperty("animation", "section-fade 500ms ease-out forwards");
+        menuUL.style.setProperty('display', 'flex');
+    } else {
+        menuToggle.style.backgroundImage = 'url(/koukaki/wp-content/themes/foce-child/assets/images/Burger.png)';
+        menuUL.style.setProperty('display', 'none');
+    }
+})
+
 /* Sections apparition on scroll */
 function sectionApparition(element) {
     let elementRect = element.getBoundingClientRect();

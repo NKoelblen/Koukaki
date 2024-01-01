@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
  Theme URI: https://www.koukaki.local
@@ -7,3 +8,480 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-5%);
+  }
+  50% {
+    transform: translateX(-2.5%);
+  }
+  75% {
+    transform: translate(2.5%, -2.5%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+/* --- HEADER --- */
+@media screen and (min-width: 700px) {
+  .menu-toggle {
+    display: block;
+  }
+  .main-navigation ul {
+    display: none;
+  }
+}
+.main-navigation #navbar {
+  position: relative;
+  height: 80px;
+  line-height: 80px;
+  vertical-align: middle;
+}
+.main-navigation #navbar a {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+.main-navigation #navbar .menu-toggle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 9.17%;
+  width: 40px;
+  padding: 0;
+  background-image: url("./assets/images/Burger.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.main-navigation.toggled ul {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  margin-left: calc((100% - 100vw) / 2);
+  background-color: #FFF5E9;
+  display: flex !important;
+  flex-direction: column;
+  gap: min(57px, 5.57vh);
+  justify-content: center;
+  padding-bottom: min(20px, 0.99vh);
+}
+.main-navigation.toggled ul li {
+  font-size: clamp(14px, 6.25vh, 64px);
+  line-height: 1.31em;
+  width: 100%;
+  max-width: 1440px;
+  text-align: center;
+  position: relative;
+}
+.main-navigation.toggled ul li a:hover {
+  color: black;
+  text-shadow: #FF5C00 0px 0px 4px;
+}
+.main-navigation.toggled ul li:has(a[href="#story"])::before {
+  content: "";
+  background-image: url("./assets/images/orchid.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(172.57px, 16.85vh);
+  height: min(172.57px, 16.85vh);
+  position: absolute;
+  bottom: min(5vh, 51.16px);
+  left: max(-2.36vw, -34px);
+}
+.main-navigation.toggled ul li:has(a[href="#story"])::after {
+  content: "";
+  background-image: url("./assets/images/menu-kawaneko.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(134.2px, 13.11vh);
+  height: min(127.37px, 12.44vh);
+  position: absolute;
+  bottom: min(0.35vh, 3.63px);
+  left: min(18.54vw, 267px);
+  animation: float 3s infinite linear reverse;
+}
+.main-navigation.toggled ul li:has(a[href="#characters"])::before {
+  content: "";
+  background-image: url("./assets/images/Sunflower.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(216px, 21.09vh);
+  height: min(216px, 21.09vh);
+  position: absolute;
+  top: max(-25.3vh, -260px);
+  left: min(1039px, 72.15vw);
+}
+.main-navigation.toggled ul li:has(a[href="#characters"])::after {
+  content: "";
+  background-image: url("./assets/images/menu-jaakuna.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 15.11vh;
+  height: 14.41vh;
+  position: absolute;
+  bottom: max(-18.02vh, -184.57px);
+  left: min(1076px, 74.72vw);
+  animation: float 2.5s infinite linear alternate-reverse;
+}
+.main-navigation.toggled ul li:has(a[href="#place"])::before {
+  content: "";
+  background-image: url("./assets/images/menu-flower.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(70.76px, 6.91vh);
+  height: min(70.76px, 6.91vh);
+  position: absolute;
+  top: max(-1.98vh, -20.24px);
+  left: min(213px, 14.79vw);
+}
+.main-navigation.toggled ul li:has(a[href="#place"])::after {
+  content: "";
+  background-image: url("./assets/images/menu-orenjiiro.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(106.76px, 10.43vh);
+  height: min(96.59px, 9.43vh);
+  position: absolute;
+  bottom: max(-269.59px, -26.33vh);
+  left: min(79px, 5.49vw);
+  animation: float 3s infinite linear;
+}
+.main-navigation.toggled ul li:has(a[href="#studio"])::before {
+  content: "";
+  background-image: url("./assets/images/menu-random-flower.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(75.75px, 7.4vh);
+  height: min(75.75px, 7.4vh);
+  position: absolute;
+  top: max(-237.22px, -23.17vh);
+  left: min(1396px, 96.94vw);
+}
+.main-navigation.toggled ul li:has(a[href="#studio"])::after {
+  content: "";
+  background-image: url("./assets/images/hibiscus_footer.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(626px, 61.13vh);
+  height: min(626px, 61.13vh);
+  position: absolute;
+  top: min(29px, 2.83vh);
+  left: min(1122px, 77.91vw);
+}
+.main-navigation.toggled ul::before {
+  content: "";
+  background-image: url("./assets/images/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 19.8964739069vh;
+  height: 13.83vh;
+  position: fixed;
+  top: calc(80px + min(23.6px, 2.31vh));
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.main-navigation.toggled ul::after {
+  content: "Studio Koukaki";
+  width: -moz-fit-content;
+  width: fit-content;
+  position: fixed;
+  bottom: min(40px, 3.9vh);
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@media screen and (max-width: 699px) {
+  #navbar {
+    height: 41px !important;
+  }
+  .site-title {
+    display: none !important;
+  }
+  .menu-toggle {
+    left: 0;
+    right: 0 !important;
+  }
+}
+/* --- BANNER --- */
+.banner {
+  position: relative;
+  background-image: none;
+}
+
+#logo {
+  position: fixed;
+  max-width: 720px;
+  top: 155px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+#logo img {
+  width: 100%;
+  animation: float 3s infinite linear;
+}
+#logo.absolute-position {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+
+#background-video, #background-image {
+  width: 100%;
+  height: 806px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 699px) {
+  #background-image {
+    display: none;
+  }
+}
+@media (max-width: 699px) {
+  #background-video {
+    display: none;
+  }
+  #logo {
+    top: 106px;
+  }
+  #logo.absolute-position {
+    top: auto;
+  }
+}
+/* --- CHARACTERS --- */
+.story #characters {
+  display: block;
+}
+.story #characters h3 {
+  margin-left: 121.67px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.swiper {
+  width: 100vw;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
+}
+.swiper .swiper-wrapper {
+  width: 100%;
+}
+.swiper .swiper-wrapper .swiper-slide {
+  min-width: -moz-fit-content !important;
+  min-width: fit-content !important;
+  margin: 38.1px 20px 0;
+}
+.swiper .swiper-wrapper .swiper-slide img {
+  height: 360px;
+}
+.swiper .swiper-wrapper .swiper-slide p {
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.4px;
+  margin: 27px auto 0 auto;
+}
+
+/* --- PLACE --- */
+.story #place {
+  background-image: url("./assets/images/Studio_Koukaki-image_place.png");
+  position: relative;
+}
+
+#clouds {
+  width: 38.47%;
+  position: absolute;
+  top: 65px;
+  left: 23.13%;
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+  filter: blur(16.5px);
+  margin: 0 !important;
+}
+#clouds #big-cloud {
+  width: 316px;
+  height: 122px;
+  align-self: flex-end;
+}
+#clouds #little-cloud {
+  width: 142px;
+  height: 55px;
+}
+
+/* --- NOMINATION --- */
+#nomination {
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  margin-top: 141px;
+  position: relative;
+}
+#nomination p {
+  width: 75%;
+  margin: 0;
+  padding: 57px 51px 67px 68px;
+  font-family: Quicksand;
+  font-size: 42px;
+  line-height: 53px;
+  font-weight: bold;
+  letter-spacing: -0.85px;
+  color: #FFF5E9;
+  text-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+  vertical-align: middle;
+  background-image: url("./assets/images/orange_nomination_bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+#nomination img {
+  width: 25%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: 50% top;
+     object-position: 50% top;
+  margin: 44px 0 0 -31px;
+}
+#nomination::before {
+  content: url("./assets/images/Sunflower.png");
+  width: 216px;
+  height: 216px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  top: -145px;
+  left: -97px;
+}
+#nomination::after {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  top: -178px;
+  right: calc(-21.43% - 87.4px);
+}
+
+@media (max-width: 920px) {
+  #nomination p {
+    width: 100%;
+  }
+  #nomination img {
+    width: 278px;
+    height: 129px;
+    margin: 0;
+  }
+  #nomination::before {
+    content: none;
+  }
+}
+@media (max-width: 699px) {
+  #nomination::after {
+    content: none;
+  }
+}
+#colophon {
+  padding-top: 235px;
+}
+#colophon::before {
+  content: none;
+}
+#colophon::after {
+  content: none;
+}
+
+/* --- ANIMATE SECIIONS --- */
+@keyframes section-fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes section-translate {
+  from {
+    transform: translateY(230px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes logo-translate {
+  from {
+    transform: translateY(80px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes banner-translate {
+  from {
+    transform: translateY(-80px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+/* --- ANIMATE TITLES --- */
+@keyframes first-word-translate {
+  from {
+    transform: translateY(70px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes next-words-translate {
+  from {
+    transform: translateY(180px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+h2, h3 {
+  overflow: hidden;
+}
+
+.first-word, .next-words {
+  display: inline-block;
+}
+
+.first-word {
+  transform: translateY(70px);
+}
+
+.next-words {
+  transform: translateY(180px);
+}
+
+/* --- ANIMATE FLOWERS --- */
+@keyframes flower-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#page {
+  --flower-rotation-duration: 15s;
+}
+
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, #nomination::before, #nomination::after, .main-navigation ul li::before, .main-navigation ul li:has(a[href="#studio"])::after {
+  animation: flower-rotation var(--flower-rotation-duration) linear infinite both;
+}/*# sourceMappingURL=style.css.map */

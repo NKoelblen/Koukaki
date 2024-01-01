@@ -7,6 +7,23 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+ @keyframes float {
+    from {
+      transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-5%);
+    }
+    50% {
+        transform: translateX(-2.5%);
+    }
+    75% {
+        transform: translate(2.5%, -2.5%);
+    }
+    to {
+      transform: translate(0);
+    }
+}
 
 /* --- HEADER --- */
 @media screen and (min-width: 700px) {
@@ -22,9 +39,12 @@
         position: relative;
         height: 80px;
         line-height: 80px;
-        text-align: center;
         vertical-align: middle;
 
+        a {
+            width: fit-content;
+            margin: auto;
+        }
         .menu-toggle {
             position: absolute;
             top: 0;
@@ -32,17 +52,18 @@
             right: 9.17%;
             width: 40px;
             padding: 0;
-            background-image: url(../images/Burger.png);
+            background-image: url("./assets/images/Burger.png");
             background-repeat: no-repeat;
             background-position: center;
+            cursor: pointer;
         }
     }
-    ul {
+    &.toggled ul {
         height: calc(100vh - 80px);
         width: 100vw;
         margin-left: calc((100% - 100vw) / 2);
         background-color: #FFF5E9;
-        display: none;
+        display: flex !important;
         flex-direction: column;
         gap: min(57px, 5.57vh);
         justify-content: center;
@@ -63,7 +84,7 @@
             &:has(a[href="#story"]) {
                 &::before {
                     content: "";
-                    background-image: url("../images/orchid.png");
+                    background-image: url("./assets/images/orchid.png");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
@@ -75,7 +96,7 @@
                 }
                 &::after {
                     content: "";
-                    background-image: url("../images/menu-kawaneko.png");
+                    background-image: url("./assets/images/menu-kawaneko.png");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
@@ -84,12 +105,13 @@
                     position: absolute;
                     bottom: min(0.35vh, 3.63px);
                     left: min(18.54vw, 267px);
+                    animation: float 3s infinite linear reverse;
                 }
             }
             &:has(a[href="#characters"]) {
                 &::before {
                     content: "";
-                    background-image: url("../images/Sunflower.png");
+                    background-image: url("./assets/images/Sunflower.png");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
@@ -101,7 +123,7 @@
                 }
                 &::after {
                     content: "";
-                    background-image: url("../images/menu-jaakuna.png");
+                    background-image: url("./assets/images/menu-jaakuna.png");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
@@ -110,12 +132,13 @@
                     position: absolute;
                     bottom: max(-18.02vh, -184.57px);
                     left: min(1076px, 74.72vw);
+                    animation: float 2.5s infinite linear alternate-reverse;
                 }
             }
             &:has(a[href="#place"]) {
                 &::before {
                     content: "";
-                    background-image: url("../images/menu-flower.png");
+                    background-image: url("./assets/images/menu-flower.png");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
@@ -127,7 +150,7 @@
                 }
                 &::after {
                     content: "";
-                    background-image: url("../images/menu-orenjiiro.png");
+                    background-image: url("./assets/images/menu-orenjiiro.png");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
@@ -136,12 +159,13 @@
                     position: absolute;
                     bottom: max(-269.59px, -26.33vh);
                     left: min(79px, 5.49vw);
+                    animation: float 3s infinite linear;
                 }
             }
             &:has(a[href="#studio"]) {
                 &::before {
                     content: "";
-                    background-image: url("../images/menu-random-flower.png");
+                    background-image: url("./assets/images/menu-random-flower.png");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
@@ -153,7 +177,7 @@
                 }
                 &::after {
                     content: "";
-                    background-image: url("../images/hibiscus_footer.png");
+                    background-image: url("./assets/images/hibiscus_footer.png");
                     background-repeat: no-repeat;
                     background-position: center;
                     background-size: contain;
@@ -167,7 +191,7 @@
         }
         &::before {
             content: "";
-            background-image: url("../images/logo.png");
+            background-image: url("./assets/images/logo.png");
             background-repeat: no-repeat;
             background-size: contain;
             width: calc(13.83vh * 204 / 141.8);
@@ -207,23 +231,6 @@
     position: relative;
     background-image: none;
   }
-@keyframes logo-float {
-    from {
-      transform: translateY(0);
-    }
-    25% {
-        transform: translateY(-5%);
-    }
-    50% {
-        transform: translateX(-2.5%);
-    }
-    75% {
-        transform: translate(2.5%, -2.5%);
-    }
-    to {
-      transform: translate(0);
-    }
-}
 #logo {
     position: fixed;
     max-width: 720px;
@@ -234,7 +241,7 @@
 
     img {
         width: 100%;
-        animation: logo-float 3s infinite linear;
+        animation: float 3s infinite linear;
     }
     &.absolute-position {
         position: absolute;
@@ -303,7 +310,7 @@
 
 /* --- PLACE --- */
 .story #place {
-    background-image: url(../images/Studio_Koukaki-image_place.png);
+    background-image: url("./assets/images/Studio_Koukaki-image_place.png");
     position: relative;
 }
 #clouds {
@@ -349,7 +356,7 @@
         color: #FFF5E9;
         text-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
         vertical-align: middle;
-        background-image: url(../images/orange_nomination_bg.png);
+        background-image: url("./assets/images/orange_nomination_bg.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: center;
@@ -361,7 +368,7 @@
         margin: 44px 0 0 -31px;
     }
     &::before {
-        content: url("../images/Sunflower.png");
+        content: url("./assets/images/Sunflower.png");
         width: 216px;
         height: 216px;
         object-fit: contain;
@@ -370,7 +377,7 @@
         left: -97px;
     }
     &::after {
-        content: url("../images/orchid.png");
+        content: url("./assets/images/orchid.png");
         position: absolute;
         top: -178px;
         right: calc(-21.43% - 87.4px);
@@ -483,6 +490,6 @@ h2, h3 {
 #page{
     --flower-rotation-duration: 15s;
 }
-.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, #nomination::before, #nomination::after {
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, #nomination::before, #nomination::after, .main-navigation ul li::before, .main-navigation ul li:has(a[href="#studio"])::after {
     animation: flower-rotation var(--flower-rotation-duration) linear infinite both;
 }
