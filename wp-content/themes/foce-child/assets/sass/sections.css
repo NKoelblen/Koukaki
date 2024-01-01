@@ -1,4 +1,196 @@
+@charset "UTF-8";
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
 /* --- HEADER --- */
+@media screen and (min-width: 700px) {
+  .menu-toggle {
+    display: block;
+  }
+  .main-navigation ul {
+    display: none;
+  }
+}
+.main-navigation #navbar {
+  position: relative;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  vertical-align: middle;
+}
+.main-navigation #navbar .menu-toggle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 9.17%;
+  width: 40px;
+  padding: 0;
+  background-image: url(../images/Burger.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.main-navigation ul {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  margin-left: calc((100% - 100vw) / 2);
+  background-color: #FFF5E9;
+  display: none;
+  flex-direction: column;
+  gap: min(57px, 5.57vh);
+  justify-content: center;
+  padding-bottom: min(20px, 0.99vh);
+}
+.main-navigation ul li {
+  font-size: clamp(14px, 6.25vh, 64px);
+  line-height: 1.31em;
+  width: 100%;
+  max-width: 1440px;
+  text-align: center;
+  position: relative;
+}
+.main-navigation ul li a:hover {
+  color: black;
+  text-shadow: #FF5C00 0px 0px 4px;
+}
+.main-navigation ul li:has(a[href="#story"])::before {
+  content: "";
+  background-image: url("../images/orchid.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(172.57px, 16.85vh);
+  height: min(172.57px, 16.85vh);
+  position: absolute;
+  bottom: min(5vh, 51.16px);
+  left: max(-2.36vw, -34px);
+}
+.main-navigation ul li:has(a[href="#story"])::after {
+  content: "";
+  background-image: url("../images/menu-kawaneko.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(134.2px, 13.11vh);
+  height: min(127.37px, 12.44vh);
+  position: absolute;
+  bottom: min(0.35vh, 3.63px);
+  left: min(18.54vw, 267px);
+}
+.main-navigation ul li:has(a[href="#characters"])::before {
+  content: "";
+  background-image: url("../images/Sunflower.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(216px, 21.09vh);
+  height: min(216px, 21.09vh);
+  position: absolute;
+  top: max(-25.3vh, -260px);
+  left: min(1039px, 72.15vw);
+}
+.main-navigation ul li:has(a[href="#characters"])::after {
+  content: "";
+  background-image: url("../images/menu-jaakuna.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 15.11vh;
+  height: 14.41vh;
+  position: absolute;
+  bottom: max(-18.02vh, -184.57px);
+  left: min(1076px, 74.72vw);
+}
+.main-navigation ul li:has(a[href="#place"])::before {
+  content: "";
+  background-image: url("../images/menu-flower.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(70.76px, 6.91vh);
+  height: min(70.76px, 6.91vh);
+  position: absolute;
+  top: max(-1.98vh, -20.24px);
+  left: min(213px, 14.79vw);
+}
+.main-navigation ul li:has(a[href="#place"])::after {
+  content: "";
+  background-image: url("../images/menu-orenjiiro.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(106.76px, 10.43vh);
+  height: min(96.59px, 9.43vh);
+  position: absolute;
+  bottom: max(-269.59px, -26.33vh);
+  left: min(79px, 5.49vw);
+}
+.main-navigation ul li:has(a[href="#studio"])::before {
+  content: "";
+  background-image: url("../images/menu-random-flower.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(75.75px, 7.4vh);
+  height: min(75.75px, 7.4vh);
+  position: absolute;
+  top: max(-237.22px, -23.17vh);
+  left: min(1396px, 96.94vw);
+}
+.main-navigation ul li:has(a[href="#studio"])::after {
+  content: "";
+  background-image: url("../images/hibiscus_footer.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: min(626px, 61.13vh);
+  height: min(626px, 61.13vh);
+  position: absolute;
+  top: min(29px, 2.83vh);
+  left: min(1122px, 77.91vw);
+}
+.main-navigation ul::before {
+  content: "";
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 19.8964739069vh;
+  height: 13.83vh;
+  position: fixed;
+  top: calc(80px + min(23.6px, 2.31vh));
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.main-navigation ul::after {
+  content: "Studio Koukaki";
+  width: -moz-fit-content;
+  width: fit-content;
+  position: fixed;
+  bottom: min(40px, 3.9vh);
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@media screen and (max-width: 699px) {
+  #navbar {
+    height: 41px !important;
+  }
+  .site-title {
+    display: none !important;
+  }
+  .menu-toggle {
+    left: 0;
+    right: 0 !important;
+  }
+}
+/* --- BANNER --- */
 .banner {
   position: relative;
   background-image: none;
