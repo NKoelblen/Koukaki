@@ -49,15 +49,13 @@ const swiper = new Swiper(".swiper", {
         disableOnInteraction: false,
     },
     loop: true,
-    loopedSlides: 2,
-    loopAdditionalSlides: 1,
     effect: "coverflow",
     coverflowEffect: {
-        slideShadows: false,
-        rotate: 70,
-        stretch: 0,
-        depth: 50,
-        modifier: 1, 
+        slideShadows: false, // Ombre
+        rotate: 70, // Rotation de la slide en degrés
+        stretch: 0, // Espacement entre les slides
+        depth: 50, // Translation sur l'axe Z
+        modifier: 1, // Multiplicateur de l'effet
     },
 });
 swiper.slideNext();
