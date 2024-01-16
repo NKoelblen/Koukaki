@@ -25,7 +25,103 @@
     transform: translate(0);
   }
 }
-/* --- HEADER --- */
+.banner {
+  position: relative;
+  background-image: none;
+}
+.banner img {
+  margin-top: 0 !important;
+}
+
+#logo {
+  position: fixed;
+  width: 100%;
+  max-width: 720px;
+  top: 155px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+#logo img {
+  width: 100%;
+  animation: float 3s infinite linear;
+}
+#logo.absolute-position {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+
+#background-video, #background-image {
+  width: 100%;
+  height: 806px;
+  object-fit: cover;
+}
+
+@media (min-width: 699px) {
+  #background-image {
+    display: none;
+  }
+}
+@media (max-width: 699px) {
+  #background-video {
+    display: none;
+  }
+  #logo {
+    top: 106px;
+  }
+  #logo.absolute-position {
+    top: auto;
+    bottom: 0;
+  }
+}
+.story #characters {
+  display: block;
+}
+.story #characters h3 {
+  margin-left: min(8.45vw, 121.67px);
+  width: fit-content;
+}
+
+.swiper {
+  width: 100vw;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
+}
+.swiper .swiper-wrapper {
+  width: 100%;
+}
+.swiper .swiper-wrapper .swiper-slide {
+  min-width: fit-content !important;
+  margin: 38.1px 20px 0;
+}
+.swiper .swiper-wrapper .swiper-slide img {
+  height: 360px;
+}
+.swiper .swiper-wrapper .swiper-slide p {
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -0.4px;
+  margin: 27px auto 0 auto;
+}
+
+@keyframes flower-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#page {
+  --flower-rotation-duration: 15s;
+}
+
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, #nomination::before, #nomination::after, .main-navigation ul li::before, .main-navigation ul li:has(a[href="#studio"])::after {
+  animation: flower-rotation var(--flower-rotation-duration) linear infinite both;
+}
+
 @media screen and (min-width: 700px) {
   .menu-toggle {
     display: block;
@@ -41,7 +137,6 @@
   vertical-align: middle;
 }
 .main-navigation #navbar a {
-  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
 }
@@ -83,7 +178,6 @@
 }
 .main-navigation.toggled ul::after {
   content: "Studio Koukaki";
-  width: -moz-fit-content;
   width: fit-content;
   position: fixed;
   bottom: min(40px, 3.9vh);
@@ -222,120 +316,6 @@
     top: calc(41px + min(23.6px, 2.31vh));
   }
 }
-/* --- BANNER --- */
-.banner {
-  position: relative;
-  background-image: none;
-}
-.banner img {
-  margin-top: 0 !important;
-}
-
-#logo {
-  position: fixed;
-  width: 100%;
-  max-width: 720px;
-  top: 155px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-#logo img {
-  width: 100%;
-  animation: float 3s infinite linear;
-}
-#logo.absolute-position {
-  position: absolute;
-  top: auto;
-  bottom: 0;
-}
-
-#background-video, #background-image {
-  width: 100%;
-  height: 806px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-@media (min-width: 699px) {
-  #background-image {
-    display: none;
-  }
-}
-@media (max-width: 699px) {
-  #background-video {
-    display: none;
-  }
-  #logo {
-    top: 106px;
-  }
-  #logo.absolute-position {
-    top: auto;
-    bottom: 0;
-  }
-}
-/* --- CHARACTERS --- */
-.story #characters {
-  display: block;
-}
-.story #characters h3 {
-  margin-left: min(8.45vw, 121.67px);
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.swiper {
-  width: 100vw;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin: auto;
-}
-.swiper .swiper-wrapper {
-  width: 100%;
-}
-.swiper .swiper-wrapper .swiper-slide {
-  min-width: -moz-fit-content !important;
-  min-width: fit-content !important;
-  margin: 38.1px 20px 0;
-}
-.swiper .swiper-wrapper .swiper-slide img {
-  height: 360px;
-}
-.swiper .swiper-wrapper .swiper-slide p {
-  font-size: 20px;
-  line-height: 25px;
-  letter-spacing: -0.4px;
-  margin: 27px auto 0 auto;
-}
-
-/* --- PLACE --- */
-.story #place {
-  background-image: url("./assets/images/Studio_Koukaki-image_place.png");
-  position: relative;
-}
-
-#clouds {
-  width: 38.47%;
-  position: absolute;
-  top: 65px;
-  left: 23.13%;
-  display: flex;
-  flex-direction: column;
-  gap: 61px;
-  filter: blur(16.5px);
-  margin: 0 !important;
-}
-#clouds #big-cloud {
-  width: 316px;
-  height: 122px;
-  align-self: flex-end;
-}
-#clouds #little-cloud {
-  width: 142px;
-  height: 55px;
-}
-
-/* --- NOMINATION --- */
 #nomination {
   display: flex;
   width: 70%;
@@ -364,18 +344,15 @@
 }
 #nomination img {
   width: 25%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: 50% top;
-     object-position: 50% top;
+  object-fit: contain;
+  object-position: 50% top;
   margin: 44px 0 0 -31px;
 }
 #nomination::before {
   content: url("./assets/images/Sunflower.png");
   width: 216px;
   height: 216px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   position: absolute;
   top: -145px;
   left: -97px;
@@ -413,6 +390,32 @@
 }
 #colophon::after {
   content: none;
+}
+
+.story #place {
+  background-image: url("./assets/images/Studio_Koukaki-image_place.png");
+  position: relative;
+}
+
+#clouds {
+  width: 38.47%;
+  position: absolute;
+  top: 65px;
+  left: 23.13%;
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+  filter: blur(16.5px);
+  margin: 0 !important;
+}
+#clouds #big-cloud {
+  width: 316px;
+  height: 122px;
+  align-self: flex-end;
+}
+#clouds #little-cloud {
+  width: 142px;
+  height: 55px;
 }
 
 /* --- ANIMATE SECIIONS --- */
@@ -481,19 +484,4 @@ h2, h3 {
   transform: translateY(180px);
 }
 
-/* --- ANIMATE FLOWERS --- */
-@keyframes flower-rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-#page {
-  --flower-rotation-duration: 15s;
-}
-
-.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, #nomination::before, #nomination::after, .main-navigation ul li::before, .main-navigation ul li:has(a[href="#studio"])::after {
-  animation: flower-rotation var(--flower-rotation-duration) linear infinite both;
-}/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */

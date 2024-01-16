@@ -23,14 +23,6 @@ get_header();
             <p><?= get_theme_mod('story'); ?></p>
         </article>
 
-        <?php
-        $args = array(
-            'post_type' => 'characters',
-            'posts_per_page' => -1,
-            'meta_key'  => '_main_char_field',
-            'orderby'   => 'meta_value_num',
-
-        ); ?>
         <article id="characters">
             <h3>Les personnages</h3>
             <?php get_template_part('/template-parts/characters'); ?>

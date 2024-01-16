@@ -1,0 +1,14 @@
+@keyframes flower-rotation{
+    from {
+        transform: rotate(0deg) ;
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#page{
+    --flower-rotation-duration: 15s;
+}
+.story h2::after, .story__article::after, #studio h2::before, #studio h2::after, .site-footer::before, .site-footer::after, .site-footer ul::after, #nomination::before, #nomination::after, .main-navigation ul li::before, .main-navigation ul li:has(a[href="#studio"])::after {
+    animation: flower-rotation var(--flower-rotation-duration) linear infinite both;
+}

@@ -1,0 +1,207 @@
+@media screen and (min-width: 700px) {
+    .menu-toggle {
+        display: block;
+    }
+    .main-navigation ul {
+        display: none;
+    }
+}
+.main-navigation {
+    #navbar {
+        position: relative;
+        height: 80px;
+        line-height: 80px;
+        vertical-align: middle;
+
+        a {
+            width: fit-content;
+            margin: auto;
+        }
+        .menu-toggle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 9.17%;
+            width: 40px;
+            padding: 0;
+            background-image: url("./assets/images/Burger.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+        }
+    }
+    &.toggled ul {
+        height: calc(100vh - 80px);
+        width: 100vw;
+        margin-left: calc((100% - 100vw) / 2);
+        background-color: #FFF5E9;
+        display: flex !important;
+        flex-direction: column;
+        gap: min(57px, 5.57vh);
+        justify-content: center;
+        padding-bottom: min(20px, 0.99vh);
+
+        &::before {
+            content: "";
+            background-image: url("./assets/images/logo.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: calc(13.83vh * 204 / 141.8);
+            height: 13.83vh;
+            position: fixed;
+            top: calc(80px + min(23.6px, 2.31vh));
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        &::after {
+            content: "Studio Koukaki";
+            width: fit-content;
+            position: fixed;
+            bottom: min(40px, 3.90vh);
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        li {
+            font-size: clamp(14px, 6.25vh, 64px);
+            line-height: 1.31em;
+            width: 100%;
+            max-width: 1440px;
+            text-align: center;
+            position: relative;
+
+            a:hover {
+                color: black;
+                text-shadow: #FF5C00 0px 0px 4px;
+            }
+            &:has(a[href="#story"]) {
+                &::before {
+                    content: "";
+                    background-image: url("./assets/images/orchid.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    width: min(172.57px, 11.98vw);
+                    height: min(168.24px, 16.43vh);
+                    position: fixed;
+                    left: calc(min(172.57px, 11.98vw) * -0.34 + max(0px, calc((100vw - 1440px) / 2)));
+                    top: min(14.84vh, 152px);
+                }
+                &::after {
+                    content: "";
+                    background-image: url("./assets/images/menu-kawaneko.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    width: min(134.2px, 9.32vw);
+                    height: min(127.37px, 12.44vh);
+                    position: fixed;
+                    left: calc(min(18.54vw, 267px) + max(0px, calc((100vw - 1440px) / 2)));
+                    top: min(23.53vh, 241px);
+                    animation: float 3s infinite linear reverse;
+                }
+            }
+            &:has(a[href="#characters"]) {
+                &::before {
+                    content: "";
+                    background-image: url("./assets/images/Sunflower.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    width: min(216px, 15vw);
+                    height: min(216px, 21.09vh);
+                    position: fixed;
+                    left: calc(min(1039px, 72.15vw) + max(0px, calc((100vw - 1440px) / 2)));
+                    top: min(16.5vh, 169px);
+                }
+                &::after {
+                    content: "";
+                    background-image: url("./assets/images/menu-jaakuna.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    width: min(154.74px, 10.75vw);
+                    height: min(147.57, 14.41vh);
+                    position: fixed;
+                    left: calc(min(1076px, 74.72vw) + max(0px, calc((100vw - 1440px) / 2)));
+                    top: min(53.71vh, 500px);
+                    animation: float 2.5s infinite linear alternate-reverse;
+                }
+            }
+            &:has(a[href="#place"]) {
+                &::before {
+                    content: "";
+                    background-image: url("./assets/images/menu-flower.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    width: min(70.76px, 4.91vw);
+                    height: min(70.76px, 6.91vh);
+                    position: fixed;
+                    left: calc(min(213px, 14.79vw) + max(0px, calc((100vw - 1440px) / 2)));
+                    top: min(54.98vh, 563px);
+                }
+                &::after {
+                    content: "";
+                    background-image: url("./assets/images/menu-orenjiiro.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    width: min(106.76px, 7.41vw);
+                    height: min(96.59px, 9.43vh);
+                    position: fixed;
+                    left: calc(min(79px, 5.49vw) + max(0px, calc((100vw - 1440px) / 2)));
+                    top: min(827px, 80.76vh);
+                    animation: float 3s infinite linear;
+                }
+            }
+            &:has(a[href="#studio"]) {
+                &::before {
+                    content: "";
+                    background-image: url("./assets/images/menu-random-flower.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    width: min(75.75px, 5.26vw);
+                    height: min(74.53px, 7.28vh);
+                    position: fixed;
+                    right: calc(min(75.75px, 5.26vw) * -0.42 + max(0px, calc((100vw - 1440px) / 2)));
+                    top: min(46.39vh, 475px);
+                }
+                &::after {
+                    content: "";
+                    background-image: url("./assets/images/hibiscus_footer.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    width: min(626px, 43.47vw);
+                    height: min(626px, 61.13vh);
+                    position: fixed;
+                    right: calc(min(626px, 43.47vw) * -0.49 + max(0px, calc((100vw - 1440px) / 2)));
+                    bottom: calc(min(626px, 61.13vh) * -0.54);
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 699px) {
+    #navbar {
+        height: 41px !important;
+    }
+    .site-title {
+        display: none !important;
+    }
+    .menu-toggle {
+        left: 0;
+        right: 0 !important;
+    }
+    .main-navigation.toggled ul {
+        height: calc(100vh - 41px);
+        padding-left: 0;
+        
+        &::before {
+            top: calc(41px + min(23.6px, 2.31vh));
+        }
+    }
+}
