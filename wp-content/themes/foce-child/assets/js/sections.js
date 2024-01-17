@@ -2,7 +2,7 @@
 function sectionApparition(element) {
     let elementRect = element.getBoundingClientRect();
     if(elementRect.top < windowH - 32) {
-        element.style.setProperty("animation", "800ms ease-out forwards");
+        element.style.setProperty("animation", "800ms ease-out both");
         if(element.id === "logo") {            
             element.style.setProperty("animation-name", "section-fade, logo-translate");
         } else if (element.id === "background-video" || element.id === "background-image") {

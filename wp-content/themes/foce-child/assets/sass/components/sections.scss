@@ -31,6 +31,18 @@
         transform: translateY(0px);
     }
 }
+section:not(.banner), #logo, #background-video, #background-image {
+    opacity: 0%;
+}
+section:not(.banner) {
+    transform: translateY(230px);
+}
+#logo {
+    transform: translateY(80px);
+}
+#background-video, #background-image {
+    transform: translateY(-80px);
+}
 
 /* --- ANIMATE TITLES --- */
 @keyframes first-word-translate {
