@@ -27,7 +27,6 @@ function titleApparition(element) {
         element.querySelector(".first-word").style.setProperty("animation", "first-word-translate 500ms ease-in forwards");
         element.querySelector(".next-words").style.setProperty("animation", "next-words-translate 500ms ease-in forwards");
     }
-    let test = elementRect.top + parseFloat(computedStyle.paddingTop);
 }
 const titles = document.querySelectorAll("h2, h3");
 titles.forEach(title => {
