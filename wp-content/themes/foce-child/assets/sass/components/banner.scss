@@ -1,0 +1,50 @@
+.banner {
+    position: relative;
+    background-image: none;
+
+    img {
+        margin-top: 0 !important;
+    }
+  }
+#logo {
+    position: fixed;
+    width: 100%;
+    max-width: 720px;
+    top: 155px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        animation: float 3s infinite linear;
+    }
+    &.absolute-position {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+    }
+}
+#background-video, #background-image {
+    width: 100%;
+    height: 806px;
+    object-fit: cover;
+}
+@media (min-width: 699px) {
+    #background-image {
+      display: none;
+    }
+}
+@media (max-width: 699px) {
+    #background-video {
+      display: none;
+    }
+    #logo {
+        top: 106px;
+
+        &.absolute-position {
+            top: auto;
+            bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+/* --- ANIMATE SECIIONS --- */
+@keyframes section-fade {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+@keyframes section-translate {
+    from {
+        transform: translateY(230px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+@keyframes logo-translate {
+    from {
+        transform: translateY(80px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+@keyframes banner-translate {
+    from {
+        transform: translateY(-80px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+section:not(.banner), #logo, #background-video, #background-image {
+    opacity: 0%;
+}
+section:not(.banner) {
+    transform: translateY(230px);
+}
+#logo {
+    transform: translateY(80px);
+}
+#background-video, #background-image {
+    transform: translateY(-80px);
+}
+
+/* --- ANIMATE TITLES --- */
+@keyframes first-word-translate {
+    from {
+        transform: translateY(70px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+@keyframes next-words-translate {
+    from {
+        transform: translateY(180px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+h2, h3 {
+    overflow: hidden;
+}
+.first-word, .next-words {
+    display: inline-block;
+}
+.first-word {
+    transform: translateY(70px);
+}
+.next-words {
+    transform: translateY(180px);
+}

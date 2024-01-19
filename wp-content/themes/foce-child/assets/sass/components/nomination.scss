@@ -1,0 +1,77 @@
+#nomination {
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-top: 141px;
+    position: relative;
+    p {
+        width: 75%;
+        margin: 0;
+        padding: 57px 51px 67px 68px;
+        font-family: Quicksand;
+        font-size: 42px;
+        line-height: 53px;
+        font-weight: bold;
+        letter-spacing:-0.85px;
+        color: #FFF5E9;
+        text-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+        vertical-align: middle;
+        background-image: url("./assets/images/orange_nomination_bg.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+    }
+    img {
+        width: 25%;
+        object-fit: contain;
+        object-position: 50% top;
+        margin: 44px 0 0 -31px;
+    }
+    &::before {
+        content: url("./assets/images/Sunflower.png");
+        width: 216px;
+        height: 216px;
+        object-fit: contain;
+        position: absolute;
+        top: -145px;
+        left: -97px;
+    }
+    &::after {
+        content: url("./assets/images/orchid.png");
+        position: absolute;
+        top: -178px;
+        right: calc(-21.43% - 87.4px);
+    }
+}
+@media (max-width: 920px) {
+    #nomination {
+        p {
+            width: 100%;
+        }
+        img {
+            width: 278px;
+            height: 129px;
+            margin: 0;
+        }
+        &::before {
+            content: none;
+        }
+    }
+}
+@media (max-width: 699px) {
+    #nomination::after {
+        content: none;
+    }
+}
+#colophon {
+    padding-top: 235px;
+
+    &::before {
+        content: none;
+    }
+    &::after {
+        content: none;
+    }
+}
